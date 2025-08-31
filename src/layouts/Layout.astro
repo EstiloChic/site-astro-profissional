@@ -26,10 +26,20 @@
             </nav>
         </div>
         <button id="mobile-menu-toggle" aria-label="Open menu">
-            <i class="fas fa-bars icon-bars"></i>
-            <i class="fas fa-times icon-close"></i>
+            <i class="fas fa-bars"></i>
         </button>
     </header>
+
+    <div class="mobile-nav-container" id="mobile-nav-container">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
     
     <main>
         <slot />
@@ -47,64 +57,57 @@
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-   <script is:inline>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Inicializa as animações de scroll
-        AOS.init({ duration: 800, once: true, delay: 100, anchorPlacement: 'top-bottom' });
+    <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 800, once: true, delay: 100, anchorPlacement: 'top-bottom' });
 
-        // --- Lógica do Botão "Voltar ao Topo" ---
-        const backToTopButton = document.getElementById('back-to-top');
-        if (backToTopButton) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    backToTopButton.classList.add('show');
-                } else {
-                    backToTopButton.classList.remove('show');
-                }
-            });
-        }
-
-        // --- Lógica do Menu Mobile ---
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileNavContainer = document.getElementById('mobile-nav-container');
-        if (mobileMenuToggle && mobileNavContainer) {
-            const closeMobileMenu = () => document.body.classList.remove('mobile-menu-open');
-            mobileMenuToggle.addEventListener('click', (e) => {
-                e.stopPropagation();
-                document.body.classList.toggle('mobile-menu-open');
-            });
-            mobileNavContainer.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
-            document.addEventListener('click', (e) => {
-                if (document.body.classList.contains('mobile-menu-open') && !mobileNavContainer.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-                    closeMobileMenu();
-                }
-            });
-        }
-        
-        // --- Lógica das Abas de Contato e Blog ---
-        const setupTabs = (containerSelector, buttonSelector, contentSelectorPrefix) => {
-            const container = document.querySelector(containerSelector);
-            if (!container) return;
-
-            const tabButtons = container.querySelectorAll(buttonSelector);
-            const allContents = document.querySelectorAll(`.${contentSelectorPrefix}`);
-            
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    allContents.forEach(content => content.classList.remove('active'));
-                    
-                    button.classList.add('active');
-                    const contentId = `${contentSelectorPrefix}-${button.dataset.tab || button.dataset.contact}`;
-                    const activeContent = document.getElementById(contentId);
-                    if (activeContent) {
-                        activeContent.classList.add('active');
+            const backToTopButton = document.getElementById('back-to-top');
+            if (backToTopButton) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTopButton.classList.add('show');
+                    } else {
+                        backToTopButton.classList.remove('show');
                     }
                 });
-            });
-        };
-        
-        setupTabs('.blog-tabs', '.tab-button', 'tab');
-        setupTabs('.contact-options', '.tab-button', 'contact');
-    });
-</script>
+            }
+
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileNavContainer = document.getElementById('mobile-nav-container');
+            if (mobileMenuToggle && mobileNavContainer) {
+                const closeMobileMenu = () => document.body.classList.remove('mobile-menu-open');
+                mobileMenuToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    document.body.classList.toggle('mobile-menu-open');
+                });
+                mobileNavContainer.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
+            }
+
+            const setupTabs = (containerSelector, buttonSelector, contentIdPrefix) => {
+                const container = document.querySelector(containerSelector);
+                if (!container) return;
+
+                const tabButtons = container.querySelectorAll(buttonSelector);
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const allContents = container.parentElement.querySelectorAll(`[id^=${contentIdPrefix}-]`);
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        allContents.forEach(content => content.classList.remove('active'));
+                        
+                        button.classList.add('active');
+                        const dataAttr = button.dataset.tab || button.dataset.contact;
+                        const contentId = `${contentIdPrefix}-${dataAttr}`;
+                        const activeContent = document.getElementById(contentId);
+                        if (activeContent) {
+                            activeContent.classList.add('active');
+                        }
+                    });
+                });
+            };
+            
+            setupTabs('.blog-tabs', '.tab-button', 'tab');
+            setupTabs('.contact-options', '.tab-button', 'contact');
+        });
+    </script>
+</body>
+</html>
