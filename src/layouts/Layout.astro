@@ -3,111 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enrique Enguix - Soluções de Trading Quantitativo</title>
-    <meta name="description" content="Enrique Enguix - Desenvolvimento de Expert Advisors (Robôs de Trading) para MQL5 com base em análise quantitativa e inteligência artificial.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <title>Teste de Funcionamento</title>
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-    <header class="main-nav">
-        <a href="#inicio" class="logo">Enrique Enguix</a>
-        <div class="desktop-nav">
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#produtos">Produtos</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-        <button id="mobile-menu-toggle" aria-label="Open menu">
-            <i class="fas fa-bars"></i>
-        </button>
-    </header>
-
-    <div class="mobile-nav-container" id="mobile-nav-container">
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </div>
-    
     <main>
         <slot />
     </main>
-
-    <a href="#inicio" id="back-to-top" aria-label="Voltar ao topo"><i class="fas fa-chevron-up"></i></a>
-
-    <footer>
-        <div class="social-links" style="margin-bottom: 1.5rem;">
-            <a href="https://www.mql5.com/pt/users/envex/seller" target="_blank" rel="noopener noreferrer" aria-label="Perfil MQL5"><i class="fas fa-chart-line"></i></a>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Perfil LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:enguix67@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar E-mail"><i class="fas fa-envelope"></i></a>
-        </div>
-        <p>&copy; 2025 Enrique Enguix. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script is:inline>
-        document.addEventListener('DOMContentLoaded', () => {
-            AOS.init({ duration: 800, once: true, delay: 100, anchorPlacement: 'top-bottom' });
-
-            const backToTopButton = document.getElementById('back-to-top');
-            if (backToTopButton) {
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 300) {
-                        backToTopButton.classList.add('show');
-                    } else {
-                        backToTopButton.classList.remove('show');
-                    }
-                });
-            }
-
-            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-            const mobileNavContainer = document.getElementById('mobile-nav-container');
-            if (mobileMenuToggle && mobileNavContainer) {
-                const closeMobileMenu = () => document.body.classList.remove('mobile-menu-open');
-                mobileMenuToggle.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    document.body.classList.toggle('mobile-menu-open');
-                });
-                mobileNavContainer.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
-            }
-
-            const setupTabs = (containerSelector, buttonSelector, contentIdPrefix) => {
-                const container = document.querySelector(containerSelector);
-                if (!container) return;
-
-                const tabButtons = container.querySelectorAll(buttonSelector);
-                tabButtons.forEach(button => {
-                    button.addEventListener('click', () => {
-                        const allContents = container.parentElement.querySelectorAll(`[id^=${contentIdPrefix}-]`);
-                        tabButtons.forEach(btn => btn.classList.remove('active'));
-                        allContents.forEach(content => content.classList.remove('active'));
-                        
-                        button.classList.add('active');
-                        const dataAttr = button.dataset.tab || button.dataset.contact;
-                        const contentId = `${contentIdPrefix}-${dataAttr}`;
-                        const activeContent = document.getElementById(contentId);
-                        if (activeContent) {
-                            activeContent.classList.add('active');
-                        }
-                    });
-                });
-            };
-            
-            setupTabs('.blog-tabs', '.tab-button', 'tab');
-            setupTabs('.contact-options', '.tab-button', 'contact');
-        });
-    </script>
 </body>
 </html>
