@@ -12,31 +12,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="/styles/style.css">
 </head>
-<body>
+<body class="lang-active-pt">
     <header class="main-nav">
         <a href="#inicio" class="logo">Enrique Enguix</a>
         <div class="desktop-nav">
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#produtos">Produtos</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#produtos"><span class="lang lang-pt">Produtos</span><span class="lang lang-es">Productos</span><span class="lang lang-en">Products</span></a></li>
+                    <li><a href="#blog"><span class="lang lang-pt">Blog</span><span class="lang lang-es">Blog</span><span class="lang lang-en">Blog</span></a></li>
+                    <li><a href="#sobre"><span class="lang lang-pt">Sobre</span><span class="lang lang-es">Sobre</span><span class="lang lang-en">About</span></a></li>
+                    <li><a href="#contato"><span class="lang lang-pt">Contato</span><span class="lang lang-es">Contacto</span><span class="lang lang-en">Contact</span></a></li>
                 </ul>
             </nav>
         </div>
-        <button id="mobile-menu-toggle" aria-label="Open menu">
-            <i class="fas fa-bars"></i>
-        </button>
+        <button id="mobile-menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
     </header>
 
     <div class="mobile-nav-container" id="mobile-nav-container">
         <nav>
             <ul class="nav-links">
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#produtos"><span class="lang lang-pt">Produtos</span><span class="lang lang-es">Productos</span><span class="lang lang-en">Products</span></a></li>
+                <li><a href="#blog"><span class="lang lang-pt">Blog</span><span class="lang lang-es">Blog</span><span class="lang lang-en">Blog</span></a></li>
+                <li><a href="#sobre"><span class="lang lang-pt">Sobre</span><span class="lang lang-es">Sobre</span><span class="lang lang-en">About</span></a></li>
+                <li><a href="#contato"><span class="lang lang-pt">Contato</span><span class="lang lang-es">Contacto</span><span class="lang lang-en">Contact</span></a></li>
             </ul>
         </nav>
     </div>
@@ -53,61 +51,12 @@
             <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Perfil LinkedIn"><i class="fab fa-linkedin"></i></a>
             <a href="mailto:enguix67@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar E-mail"><i class="fas fa-envelope"></i></a>
         </div>
-        <p>&copy; 2025 Enrique Enguix. Todos os direitos reservados.</p>
+        <p><span class="lang lang-pt">&copy; 2025 Enrique Enguix. Todos os direitos reservados.</span><span class="lang lang-es">&copy; 2025 Enrique Enguix. Todos los derechos reservados.</span><span class="lang lang-en">&copy; 2025 Enrique Enguix. All rights reserved.</span></p>
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script is:inline>
-        document.addEventListener('DOMContentLoaded', () => {
-            AOS.init({ duration: 800, once: true, delay: 100, anchorPlacement: 'top-bottom' });
-
-            const backToTopButton = document.getElementById('back-to-top');
-            if (backToTopButton) {
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 300) {
-                        backToTopButton.classList.add('show');
-                    } else {
-                        backToTopButton.classList.remove('show');
-                    }
-                });
-            }
-
-            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-            const mobileNavContainer = document.getElementById('mobile-nav-container');
-            if (mobileMenuToggle && mobileNavContainer) {
-                const closeMobileMenu = () => document.body.classList.remove('mobile-menu-open');
-                mobileMenuToggle.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    document.body.classList.toggle('mobile-menu-open');
-                });
-                mobileNavContainer.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
-            }
-
-            const setupTabs = (containerSelector, buttonSelector, contentIdPrefix) => {
-                const container = document.querySelector(containerSelector);
-                if (!container) return;
-
-                const tabButtons = container.querySelectorAll(buttonSelector);
-                tabButtons.forEach(button => {
-                    button.addEventListener('click', () => {
-                        const allContentsInScope = container.parentElement.querySelectorAll(`[id^=${contentIdPrefix}-]`);
-                        tabButtons.forEach(btn => btn.classList.remove('active'));
-                        allContentsInScope.forEach(content => content.classList.remove('active'));
-                        
-                        button.classList.add('active');
-                        const dataAttr = button.dataset.tab || button.dataset.contact;
-                        const contentId = `${contentIdPrefix}-${dataAttr}`;
-                        const activeContent = document.getElementById(contentId);
-                        if (activeContent) {
-                            activeContent.classList.add('active');
-                        }
-                    });
-                });
-            };
-            
-            setupTabs('.blog-tabs', '.tab-button', 'tab');
-            setupTabs('.contact-options', '.tab-button', 'contact');
-        });
+        AOS.init({ duration: 800, once: true, delay: 100, anchorPlacement: 'top-bottom' });
     </script>
 </body>
 </html>
