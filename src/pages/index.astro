@@ -17,22 +17,40 @@ import Layout from '../layouts/Layout.astro';
         <section id="blog" class="page-section">
             <div class="container">
                 <h2 class="section-title" data-aos="fade-up">Blog & Pesquisas</h2>
-                 <div class="grid-layout">
-                    <div class="card blog-card" data-aos="fade-up">
-                        <h3>Aplicações de IA no Mercado</h3>
-                        <p class="card-content">Como a IA está transformando o trading e a gestão de risco.</p>
-                        <a href="#" class="button">Leia o Artigo</a>
+                <div class="blog-tabs" data-aos="fade-up">
+                    <button class="tab-button active" data-tab="geral">Conceitos Gerais</button>
+                    <button class="tab-button" data-tab="intermediario">Conceitos Intermediários</button>
+                    <button class="tab-button" data-tab="avancado">Tópicos Avançados</button>
+                    <button class="tab-button" data-tab="todos">Ver Todos</button>
+                </div>
+
+                <div id="tab-geral" class="tab-content active">
+                    <div class="grid-layout">
+                        <div class="card blog-card" data-aos="fade-up">
+                            <h3>Aplicações de IA no Mercado</h3>
+                            <p class="card-content">Como a IA está transformando o trading e a gestão de risco.</p>
+                            <a href="#" class="button">Leia o Artigo</a>
+                        </div>
+                        <div class="card blog-card" data-aos="fade-up" data-aos-delay="100">
+                            <h3>A Arte do Backtesting Robusto</h3>
+                            <p class="card-content">Evite o sobreajuste (overfitting) e valide suas estratégias da forma correta.</p>
+                            <a href="#" class="button">Leia Mais</a>
+                        </div>
+                        <div class="card blog-card" data-aos="fade-up" data-aos-delay="200">
+                            <h3>Psicologia do Trading Quantitativo</h3>
+                            <p class="card-content">Como manter a disciplina e a confiança nos seus sistemas.</p>
+                            <a href="#" class="button" style="cursor: not-allowed; opacity: 0.6;">Em Breve</a>
+                        </div>
                     </div>
-                    <div class="card blog-card" data-aos="fade-up" data-aos-delay="100">
-                        <h3>A Arte do Backtesting Robusto</h3>
-                        <p class="card-content">Evite o sobreajuste (overfitting) e valide suas estratégias da forma correta.</p>
-                        <a href="#" class="button">Leia Mais</a>
-                    </div>
-                    <div class="card blog-card" data-aos="fade-up" data-aos-delay="200">
-                        <h3>Psicologia do Trading Quantitativo</h3>
-                        <p class="card-content">Como manter a disciplina e a confiança nos seus sistemas, mesmo durante períodos de drawdown.</p>
-                        <a href="#" class="button" style="cursor: not-allowed; opacity: 0.6;">Em Breve</a>
-                    </div>
+                </div>
+                 <div id="tab-intermediario" class="tab-content">
+                     <p>Conteúdo de conceitos intermediários em breve.</p>
+                </div>
+                 <div id="tab-avancado" class="tab-content">
+                     <p>Conteúdo de tópicos avançados em breve.</p>
+                </div>
+                 <div id="tab-todos" class="tab-content">
+                     <p>Todo o conteúdo do blog em breve.</p>
                 </div>
             </div>
         </section>
@@ -124,6 +142,9 @@ import Layout from '../layouts/Layout.astro';
                         </form>
                         <div id="form-feedback-message" class="form-feedback"></div>
                     </div>
+                </div>
+                <div id="contact-direct" class="contact-details">
+                    <p>Canais para contato direto em breve.</p>
                 </div>
             </div>
         </section>
