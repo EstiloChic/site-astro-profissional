@@ -20,10 +20,7 @@ import Layout from '../layouts/Layout.astro';
                 <div class="blog-tabs" data-aos="fade-up">
                     <button class="tab-button active" data-tab="geral">Conceitos Gerais</button>
                     <button class="tab-button" data-tab="intermediario">Conceitos Intermediários</button>
-                    <button class="tab-button" data-tab="avancado">Tópicos Avançados</button>
-                    <button class="tab-button" data-tab="todos">Ver Todos</button>
                 </div>
-
                 <div id="tab-geral" class="tab-content active">
                     <div class="grid-layout">
                         <div class="card blog-card" data-aos="fade-up">
@@ -43,40 +40,13 @@ import Layout from '../layouts/Layout.astro';
                         </div>
                     </div>
                 </div>
-                 <div id="tab-intermediario" class="tab-content">
-                     <p>Conteúdo de conceitos intermediários em breve.</p>
-                </div>
-                 <div id="tab-avancado" class="tab-content">
-                     <p>Conteúdo de tópicos avançados em breve.</p>
-                </div>
-                 <div id="tab-todos" class="tab-content">
-                     <p>Todo o conteúdo do blog em breve.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="performance" class="page-section">
-            <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Performance Comprovada</h2>
-                <p data-aos="fade-up" style="text-align: center; max-width: 700px; margin: -2rem auto 3.5rem; color: var(--cor-texto-secundario);">Resultados baseados em backtests rigorosos e validados. Transparência é a chave para a confiança.</p>
-                <div class="grid-layout">
-                    <div class="card performance-card" data-aos="fade-up">
-                        <h3>Nexus EA</h3>
-                        <div class="metric"><span class="metric-value">1.85</span><span class="metric-label">Profit Factor</span></div>
-                        <div class="metric"><span class="metric-value">12.4%</span><span class="metric-label">Max Drawdown</span></div>
-                        <a href="#" class="button">Ver Detalhes</a>
-                    </div>
-                    <div class="card performance-card" data-aos="fade-up" data-aos-delay="100">
-                        <h3>AXIS Neural EA</h3>
-                        <div class="metric"><span class="metric-value">2.31</span><span class="metric-label">Profit Factor</span></div>
-                        <div class="metric"><span class="metric-value">9.8%</span><span class="metric-label">Max Drawdown</span></div>
-                        <a href="#" class="button">Ver Detalhes</a>
-                    </div>
-                    <div class="card performance-card" data-aos="fade-up" data-aos-delay="200">
-                         <h3>NODE Neural EA</h3>
-                        <div class="metric"><span class="metric-value">1.92</span><span class="metric-label">Profit Factor</span></div>
-                        <div class="metric"><span class="metric-value">11.2%</span><span class="metric-label">Max Drawdown</span></div>
-                        <a href="#" class="button">Ver Detalhes</a>
+                <div id="tab-intermediario" class="tab-content">
+                    <div class="grid-layout">
+                        <div class="card blog-card">
+                            <h3>Validação Walk-Forward</h3>
+                            <p class="card-content">Técnicas avançadas para simular o desempenho real de uma estratégia.</p>
+                            <a href="#" class="button" style="cursor: not-allowed; opacity: 0.6;">Em Breve</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -89,19 +59,19 @@ import Layout from '../layouts/Layout.astro';
                     <div class="card product-card" data-aos="fade-up" data-aos-delay="100">
                         <img src="https://i.postimg.cc/Ssp9H0Dv/nexus-ea-forex-mt5-logo-200x200-6618.png" alt="Logo Nexus EA">
                         <h3>Nexus EA Forex MT5</h3>
-                        <p class="card-content">Sistema diversificado e robusto, operando com 9 estratégias em até 8 pares de moedas para máxima exposição a oportunidades.</p>
+                        <p class="card-content">Sistema diversificado e robusto, operando com 9 estratégias em até 8 pares de moedas.</p>
                         <a href="#" class="button">Saber Mais</a>
                     </div>
                     <div class="card product-card" data-aos="fade-up" data-aos-delay="200">
                         <img src="https://i.postimg.cc/PJJ5R2s7/axis-neural-ea-for-mt5-logo-200x200-6888.png" alt="Logo AXIS Neural EA">
                         <h3>AXIS Neural EA</h3>
-                        <p class="card-content">A vanguarda do trading neural. Uma ferramenta de alta performance que utiliza inteligência artificial para se adaptar ao mercado.</p>
+                        <p class="card-content">A vanguarda do trading neural. Uma ferramenta de alta performance que utiliza IA para se adaptar ao mercado.</p>
                         <a href="#" class="button">Saber Mais</a>
                     </div>
                     <div class="card product-card" data-aos="fade-up" data-aos-delay="300">
                         <img src="https://i.postimg.cc/NjBjhscT/node-neural-ea-for-mt5-logo-200x200-1327.png" alt="Logo NODE Neural EA">
                         <h3>NODE Neural EA</h3>
-                        <p class="card-content">Uma porta de entrada para o trading com IA, focado em simplicidade de uso sem sacrificar a eficácia da estratégia.</p>
+                        <p class="card-content">Uma porta de entrada para o trading com IA, focado em simplicidade sem sacrificar a eficácia.</p>
                         <a href="#" class="button">Saber Mais</a>
                     </div>
                 </div>
@@ -125,9 +95,6 @@ import Layout from '../layouts/Layout.astro';
         <section id="contato" class="page-section">
             <div class="container" style="max-width: 800px;">
                 <h2 class="section-title" data-aos="fade-up">Entre em Contato</h2>
-                <div data-aos="fade-up" style="text-align:center; margin-bottom: 2.5rem;">
-                    <p>Como posso ajudar? Escolha a opção mais adequada abaixo.</p>
-                </div>
                 <div class="contact-options" data-aos="fade-up">
                     <button class="tab-button active" data-contact="form"><i class="fas fa-question-circle"></i> Dúvidas & Suporte</button>
                     <button class="tab-button" data-contact="direct"><i class="fas fa-handshake"></i> Projetos & Parcerias</button>
@@ -138,13 +105,14 @@ import Layout from '../layouts/Layout.astro';
                             <div class="form-group"><label for="name">Nome</label><input type="text" id="name" name="name" required></div>
                             <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
                             <div class="form-group"><label for="message">Mensagem</label><textarea id="message" name="message" required rows="5"></textarea></div>
-                            <button type="submit" class="button" style="justify-self: start;">Enviar Mensagem</button>
+                            <button type="submit" class="button">Enviar Mensagem</button>
                         </form>
-                        <div id="form-feedback-message" class="form-feedback"></div>
                     </div>
                 </div>
                 <div id="contact-direct" class="contact-details">
-                    <p>Canais para contato direto em breve.</p>
+                    <div class="card" style="text-align: center;">
+                       <p>Para discutir projetos, colaborações ou propostas de negócios, entre em contato por um dos canais no rodapé.</p>
+                    </div>
                 </div>
             </div>
         </section>
