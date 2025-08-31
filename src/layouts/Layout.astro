@@ -29,7 +29,177 @@
     <!-- Link para nosso arquivo CSS externo -->
     <link rel="stylesheet" href="/styles/style.css">
 </head>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script is:inline>
+        AOS.init({ duration: 800, once: true, delay: 100, anchorPlacement: 'top-bottom' });
 
+        document.addEventListener('DOMContentLoaded', () => {
+            const backToTopButton = document.getElementById('back-to-top');
+            if (backToTopButton) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTopButton.classList.add('show');
+                    } else {
+                        backToTopButton.classList.remove('show');
+                    }
+                });
+            }
+
+            // --- Lógica do Menu Mobile ---
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileNavContainer = document.getElementById('mobile-nav-container');
+            if (mobileMenuToggle && mobileNavContainer) {
+                const closeMobileMenu = () => document.body.classList.remove('mobile-menu-open');
+                mobileMenuToggle.addEventListener('click', (e) => { e.stopPropagation(); document.body.classList.toggle('mobile-menu-open'); });
+                mobileNavContainer.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
+                document.addEventListener('click', (e) => {
+                    if (document.body.classList.contains('mobile-menu-open') && !mobileNavContainer.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                        closeMobileMenu();
+                    }
+                });
+            }
+
+            // --- Lógica do Seletor de Idiomas ---
+            const htmlElement = document.documentElement;
+            const langData = {
+                pt: { title: 'Enrique Enguix - Soluções de Trading Quantitativo' },
+                es: { title: 'Enrique Enguix - Soluciones de Trading Cuantitativo' },
+                en: { title: 'Enrique Enguix - Quantitative Trading Solutions' }
+            };
+            const setLanguage = (lang) => {
+                if (!langData[lang]) return;
+                const isMenuOpen = document.body.classList.contains('mobile-menu-open');
+                document.body.className = Array.from(document.body.classList).filter(c => !c.startsWith('lang-active-')).join(' ');
+                document.body.classList.add(`lang-active-${lang}`);
+                if (isMenuOpen) document.body.classList.add('mobile-menu-open');
+                htmlElement.setAttribute('lang', lang);
+                document.title = langData[lang].title;
+                localStorage.setItem('language', lang);
+            };
+            const setupLanguageSwitcher = (toggleBtnId, menuId) => {
+                const toggleButton = document.getElementById(toggleBtnId);
+                const languageMenu = document.getElementById(menuId);
+                if (!toggleButton || !languageMenu) return;
+                toggleButton.addEventListener('click', (e) => { e.stopPropagation(); languageMenu.classList.toggle('show'); });
+                languageMenu.addEventListener('click', (e) => {
+                    const button = e.target.closest('button');
+                    if (button && button.dataset.lang) { setLanguage(button.dataset.lang); languageMenu.classList.remove('show'); }
+                });
+            };
+            setupLanguageSwitcher('language-toggle-button', 'language-menu');
+            setupLanguageSwitcher('mobile-language-toggle-button', 'mobile-language-menu');
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.language-switcher')) {
+                    document.getElementById('language-menu')?.classList.remove('show');
+                    document.getElementById('mobile-language-menu')?.classList.remove('show');
+                }
+            });
+            const savedLang = localStorage.getItem('language') || 'pt';
+            setLanguage(savedLang);
+
+            // --- LÓGICA DE NAVEGAÇÃO SPA (SINGLE PAGE APP) ---
+            const mainContent = document.querySelector('.main-content');
+            const pageViews = document.querySelector('.page-views');
+            if (mainContent && pageViews) {
+                const allPageViews = pageViews.querySelectorAll('.page-view');
+                const handleNavigation = () => {
+                    const hash = window.location.hash.substring(1);
+                    const targetView = document.getElementById(hash);
+                    window.scrollTo(0, 0);
+                    if (targetView && pageViews.contains(targetView)) {
+                        mainContent.style.display = 'none';
+                        allPageViews.forEach(view => view.style.display = 'none');
+                        targetView.style.display = 'block';
+                        updateSocialShareLinks();
+                    } else {
+                        mainContent.style.display = 'block';
+                        allPageViews.forEach(view => view.style.display = 'none');
+                        if (hash && hash !== 'inicio') {
+                        const mainSection = document.getElementById(hash);
+                        if (mainSection) { setTimeout(() => mainSection.scrollIntoView({ behavior: 'smooth' }), 0); }
+                        }
+                    }
+                };
+                window.addEventListener('hashchange', handleNavigation);
+                handleNavigation();
+            }
+
+            // --- LÓGICA DAS ABAS DO BLOG ---
+            const blogTabsContainer = document.querySelector('.blog-tabs');
+            if (blogTabsContainer) {
+                const tabButtons = blogTabsContainer.querySelectorAll('.tab-button');
+                const tabContents = document.querySelectorAll('.tab-content');
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        tabContents.forEach(content => content.classList.remove('active'));
+                        button.classList.add('active');
+                        document.getElementById(`tab-${button.dataset.tab}`).classList.add('active');
+                    });
+                });
+            }
+
+            // --- LÓGICA DAS ABAS DE CONTATO ---
+            const contactOptionsContainer = document.querySelector('.contact-options');
+            if (contactOptionsContainer) {
+                const contactButtons = contactOptionsContainer.querySelectorAll('.tab-button');
+                const contactDetails = document.querySelectorAll('.contact-details');
+                contactButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        contactButtons.forEach(btn => btn.classList.remove('active'));
+                        contactDetails.forEach(detail => detail.classList.remove('active'));
+                        button.classList.add('active');
+                        document.getElementById(`contact-${button.dataset.contact}`).classList.add('active');
+                    });
+                });
+            }
+
+            // --- LÓGICA DO FORMULÁRIO DE CONTATO (SEM RECARREGAR) ---
+            const contactForm = document.getElementById('contact-form-element');
+            if(contactForm) {
+                const feedbackMessage = document.getElementById('form-feedback-message');
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const submitButton = contactForm.querySelector('button[type="submit"]');
+                    const originalButtonText = submitButton.innerHTML;
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = `<i class="fas fa-spinner fa-spin"></i> <span class="lang lang-pt">Enviando...</span><span class="lang lang-es">Enviando...</span><span class="lang lang-en">Sending...</span>`;
+
+                    setTimeout(() => {
+                        contactForm.reset();
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = originalButtonText;
+                        feedbackMessage.textContent = 'Mensagem enviada com sucesso! Obrigado.';
+                        feedbackMessage.className = 'form-feedback success';
+                        feedbackMessage.style.display = 'block';
+                        
+                        setTimeout(() => { feedbackMessage.style.display = 'none'; }, 5000);
+                    }, 1500);
+                });
+            }
+            
+            // --- LÓGICA DOS BOTÕES DE COMPARTILHAMENTO ---
+            function updateSocialShareLinks() {
+                const pageUrl = window.location.href;
+                const pageTitle = document.title;
+                const shareLinks = document.querySelectorAll('.social-share-buttons');
+                
+                shareLinks.forEach(container => {
+                    const twitterShare = container.querySelector('.share-twitter');
+                    if (twitterShare) twitterShare.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(pageTitle)}&url=${encodeURIComponent(pageUrl)}`;
+                    
+                    const linkedinShare = container.querySelector('.share-linkedin');
+                    if (linkedinShare) linkedinShare.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
+                    
+                    const facebookShare = container.querySelector('.share-facebook');
+                    if (facebookShare) facebookShare.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
+
+                    const telegramShare = container.querySelector('.share-telegram');
+                    if (telegramShare) telegramShare.href = `https://t.me/share/url?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(pageTitle)}`;
+                });
+            }
+        });
+    </script>
 <body>
     <header class="main-nav">
         <a href="#inicio" class="logo">Enrique Enguix</a>
