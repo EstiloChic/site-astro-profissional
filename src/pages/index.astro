@@ -3,177 +3,62 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-    <!-- Conteúdo Principal do Site (Landing Page) -->
     <div class="main-content">
         <section class="hero page-section" id="inicio">
             <div class="container">
                 <div class="hero-content" data-aos="fade-up">
-                    <h1><span class="lang lang-pt">Trading Automatizado com <span class="highlight">Rigor Científico</span>.</span><span class="lang lang-es">Trading Automatizado con <span class="highlight">Rigor Científico</span>.</span><span class="lang lang-en">Automated Trading with <span class="highlight">Scientific Rigor</span>.</span></h1>
-                    <p><span class="lang lang-pt">Desenvolvo Expert Advisors para MQL5 que unem análise quantitativa e tecnologia para otimizar seus resultados no mercado financeiro.</span><span class="lang lang-es">Desarrollo Expert Advisors para MQL5 que combinan análisis cuantitativo y tecnología para optimizar sus resultados en el mercado financiero.</span><span class="lang lang-en">I develop MQL5 Expert Advisors that merge quantitative analysis and technology to optimize your results in the financial market.</span></p>
-                    <a href="#produtos" class="button"><span class="lang lang-pt">Conheça os Produtos</span><span class="lang lang-es">Conoce los Productos</span><span class="lang lang-en">Explore Products</span></a>
+                    <h1>Trading Automatizado com <span class="highlight">Rigor Científico</span>.</h1>
+                    <p>Desenvolvo Expert Advisors para MQL5 que unem análise quantitativa e tecnologia para otimizar seus resultados no mercado financeiro.</p>
+                    <a href="#produtos" class="button">Conheça os Produtos</a>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO DE BLOG COM ABAS - INÍCIO -->
         <section id="blog" class="page-section">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up"><span class="lang lang-pt">Blog & Pesquisas</span><span class="lang lang-es">Blog & Investigación</span><span class="lang lang-en">Blog & Research</span></h2>
-                <div class="blog-tabs" data-aos="fade-up">
-                    <button class="tab-button active" data-tab="geral"><span class="lang lang-pt">Conceitos Gerais</span><span class="lang lang-es">Conceptos Generales</span><span class="lang lang-en">General Concepts</span></button>
-                    <button class="tab-button" data-tab="intermediario"><span class="lang lang-pt">Conceitos Intermediários</span><span class="lang lang-es">Conceptos Intermedios</span><span class="lang lang-en">Intermediate Concepts</span></button>
-                    <button class="tab-button" data-tab="avancado"><span class="lang lang-pt">Tópicos Avançados</span><span class="lang lang-es">Tópicos Avanzados</span><span class="lang lang-en">Advanced Topics</span></button>
-                    <button class="tab-button" data-tab="todos"><span class="lang lang-pt">Ver Todos</span><span class="lang lang-es">Ver Todos</span><span class="lang lang-en">View All</span></button>
-                </div>
-
-                <!-- Aba: Conceitos Gerais -->
-                <div id="tab-geral" class="tab-content active">
-                    <div class="grid-layout">
-                        <div class="card blog-card" data-aos="fade-up">
-                            <h3><span class="lang lang-pt">Aplicações de IA no Mercado</span><span class="lang lang-es">Aplicaciones de IA en el Mercado</span><span class="lang lang-en">AI Applications in the Market</span></h3>
-                            <p class="card-content"><span class="lang lang-pt">Como a IA está transformando o trading e a gestão de risco.</span><span class="lang lang-es">Cómo la IA está transformando el trading y la gestión de riesgos.</span><span class="lang lang-en">How AI is transforming trading and risk management.</span></p>
-                            <a href="#artigo-ia" class="button"><span class="lang lang-pt">Leia o Artigo</span><span class="lang lang-es">Leer Artículo</span><span class="lang lang-en">Read Article</span></a>
-                        </div>
-                        <div class="card blog-card" data-aos="fade-up" data-aos-delay="100">
-                            <h3><span class="lang lang-pt">A Arte do Backtesting Robusto</span><span class="lang lang-es">El Arte del Backtesting Robusto</span><span class="lang lang-en">The Art of Robust Backtesting</span></h3>
-                            <p class="card-content"><span class="lang lang-pt">Evite o sobreajuste (overfitting) e valide suas estratégias da forma correta.</span><span class="lang lang-es">Evite el sobreajuste (overfitting) y valide sus estrategias correctamente.</span><span class="lang lang-en">Avoid overfitting and validate your strategies the right way.</span></p>
-                            <a href="#artigo-backtesting" class="button"><span class="lang lang-pt">Leia Mais</span><span class="lang lang-es">Leer Más</span><span class="lang lang-en">Read More</span></a>
-                        </div>
-                        <div class="card blog-card" data-aos="fade-up" data-aos-delay="200">
-                            <h3><span class="lang lang-pt">Psicologia do Trading Quantitativo</span><span class="lang lang-es">Psicología del Trading Cuantitativo</span><span class="lang lang-en">Psychology of Quant Trading</span></h3>
-                            <p class="card-content"><span class="lang lang-pt">Como manter a disciplina e a confiança nos seus sistemas, mesmo durante períodos de drawdown.</span><span class="lang lang-es">Cómo mantener la disciplina y la confianza en sus sistemas, incluso durante los períodos de drawdown.</span><span class="lang lang-en">How to maintain discipline and trust in your systems, even during drawdown periods.</span></p>
-                            <a href="#" class="button" style="cursor: not-allowed; opacity: 0.6;"><span class="lang lang-pt">Em Breve</span><span class="lang lang-es">Próximamente</span><span class="lang lang-en">Coming Soon</span></a>
-                        </div>
+                <h2 class="section-title" data-aos="fade-up">Blog & Pesquisas</h2>
+                 <div class="grid-layout">
+                    <div class="card blog-card" data-aos="fade-up">
+                        <h3>Aplicações de IA no Mercado</h3>
+                        <p class="card-content">Como a IA está transformando o trading e a gestão de risco.</p>
+                        <a href="#" class="button">Leia o Artigo</a>
                     </div>
-                </div>
-
-                <!-- Aba: Conceitos Intermediários -->
-                <div id="tab-intermediario" class="tab-content">
-                    <div class="grid-layout">
-                        <div class="card blog-card">
-                            <h3><span class="lang lang-pt">Validação Walk-Forward</span><span class="lang lang-es">Validación Walk-Forward</span><span class="lang lang-en">Walk-Forward Validation</span></h3>
-                            <p class="card-content"><span class="lang lang-pt">Técnicas avançadas para simular o desempenho real de uma estratégia.</span><span class="lang lang-es">Técnicas avanzadas para simular el rendimiento real de una estrategia.</span><span class="lang lang-en">Advanced techniques to simulate a strategy's real performance.</span></p>
-                            <a href="#" class="button" style="cursor: not-allowed; opacity: 0.6;"><span class="lang lang-pt">Em Breve</span><span class="lang lang-es">Próximamente</span><span class="lang lang-en">Coming Soon</span></a>
-                        </div>
-                        <div class="card blog-card">
-                            <h3><span class="lang lang-pt">Gestão de Risco Quantitativa</span><span class="lang lang-es">Gestión del Riesgo Cuantitativa</span><span class="lang lang-en">Quantitative Risk Management</span></h3>
-                            <p class="card-content"><span class="lang lang-pt">Modelos para dimensionar posições e proteger o capital.</span><span class="lang lang-es">Modelos para dimensionar posiciones y proteger el capital.</span><span class="lang lang-en">Models for position sizing and capital protection.</span></p>
-                            <a href="#" class="button" style="cursor: not-allowed; opacity: 0.6;"><span class="lang lang-pt">Em Breve</span><span class="lang lang-es">Próximamente</span><span class="lang lang-en">Coming Soon</span></a>
-                        </div>
-                        <div class="card blog-card">
-                            <h3><span class="lang lang-pt">MQL5/Python Aplicado</span><span class="lang lang-es">MQL5/Python Aplicado</span><span class="lang lang-en">Applied MQL5/Python</span></h3>
-                            <p class="card-content"><span class="lang lang-pt">Integrando o poder da análise de dados do Python com a execução do MQL5.</span><span class="lang lang-es">Integrando el poder del análisis de datos de Python con la ejecución de MQL5.</span><span class="lang lang-en">Integrating Python's data analysis power with MQL5 execution.</span></p>
-                            <a href="#" class="button" style="cursor: not-allowed; opacity: 0.6;"><span class="lang lang-pt">Em Breve</span><span class="lang lang-es">Próximamente</span><span class="lang lang-en">Coming Soon</span></a>
-                        </div>
+                    <div class="card blog-card" data-aos="fade-up" data-aos-delay="100">
+                        <h3>A Arte do Backtesting Robusto</h3>
+                        <p class="card-content">Evite o sobreajuste (overfitting) e valide suas estratégias da forma correta.</p>
+                        <a href="#" class="button">Leia Mais</a>
                     </div>
-                </div>
-                
-                <!-- Aba: Tópicos Avançados -->
-                <div id="tab-avancado" class="tab-content">
-                    <div class="grid-layout">
-                        <div class="card blog-card">
-                            <h3><span class="lang lang-pt">Testes de Monte Carlo</span><span class="lang lang-es">Pruebas de Monte Carlo</span><span class="lang lang-en">Monte Carlo Simulations</span></h3>
-                            <p class="card-content"><span class="lang lang-pt">Analisando a robustez de uma estratégia sob milhares de cenários de mercado.</span><span class="lang lang-es">Analizando la robustez de una estrategia bajo miles de escenarios de mercado.</span><span class="lang lang-en">Analyzing a strategy's robustness under thousands of market scenarios.</span></p>
-                            <a href="#" class="button" style="cursor: not-allowed; opacity: 0.6;"><span class="lang lang-pt">Em Breve</span><span class="lang lang-es">Próximamente</span><span class="lang lang-en">Coming Soon</span></a>
-                        </div>
-                        <div class="card blog-card">
-                            <h3><span class="lang lang-pt">Portfólios Descorrelacionados</span><span class="lang lang-es">Carteras Descorrelacionadas</span><span class="lang lang-en">Uncorrelated Portfolios</span></h3>
-                            <p class="card-content"><span class="lang lang-pt">A ciência de combinar estratégias para reduzir o risco e suavizar a curva de capital.</span><span class="lang lang-es">La ciencia de combinar estrategias para reducir el riesgo y suavizar la curva de capital.</span><span class="lang lang-en">The science of combining strategies to reduce risk and smooth the equity curve.</span></p>
-                            <a href="#" class="button" style="cursor: not-allowed; opacity: 0.6;"><span class="lang lang-pt">Em Breve</span><span class="lang lang-es">Próximamente</span><span class="lang lang-en">Coming Soon</span></a>
-                        </div>
-                        <div class="card blog-card">
-                            <h3><span class="lang lang-pt">Pipelines de Investigação</span><span class="lang lang-es">Pipelines de Investigación</span><span class="lang lang-en">Research Pipelines</span></h3>
-                            <p class="card-content"><span class="lang lang-pt">Da ideia inicial ao deployment: um framework para pesquisa e produção.</span><span class="lang lang-es">De la idea inicial al despliegue: un marco para la investigación y producción.</span><span class="lang lang-en">From initial idea to deployment: a framework for research and production.</span></p>
-                            <a href="#" class="button" style="cursor: not-allowed; opacity: 0.6;"><span class="lang lang-pt">Em Breve</span><span class="lang lang-es">Próximamente</span><span class="lang lang-en">Coming Soon</span></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Aba: Ver Todos -->
-                <div id="tab-todos" class="tab-content">
-                    <h3 class="category-subtitle"><span class="lang lang-pt">Conceitos Gerais</span><span class="lang lang-es">Conceptos Generales</span><span class="lang lang-en">General Concepts</span></h3>
-                    <div class="grid-layout">
-                       <div class="card blog-card">
-                            <h3><span class="lang lang-pt">Aplicações de IA no Mercado</span><span class="lang lang-es">Aplicaciones de IA en el Mercado</span><span class="lang lang-en">AI Applications in the Market</span></h3>
-                            <p class="card-content"><span class="lang lang-pt">Como a IA está transformando o trading e a gestão de risco.</span><span class="lang lang-es">Cómo la IA está transformando el trading y la gestión de riesgos.</span><span class="lang lang-en">How AI is transforming trading and risk management.</span></p>
-                            <a href="#artigo-ia" class="button"><span class="lang lang-pt">Leia o Artigo</span><span class="lang lang-es">Leer Artículo</span><span class="lang lang-en">Read Article</span></a>
-                        </div>
-                        <div class="card blog-card">
-                            <h3><span class="lang lang-pt">A Arte do Backtesting Robusto</span><span class="lang lang-es">El Arte del Backtesting Robusto</span><span class="lang lang-en">The Art of Robust Backtesting</span></h3>
-                            <p class="card-content"><span class="lang lang-pt">Evite o sobreajuste (overfitting) e valide suas estratégias da forma correta.</span><span class="lang lang-es">Evite el sobreajuste (overfitting) y valide sus estrategias correctamente.</span><span class="lang lang-en">Avoid overfitting and validate your strategies the right way.</span></p>
-                            <a href="#artigo-backtesting" class="button"><span class="lang lang-pt">Leia Mais</span><span class="lang lang-es">Leer Más</span><span class="lang lang-en">Read More</span></a>
-                        </div>
-                        <div class="card blog-card">
-                            <h3><span class="lang lang-pt">Psicologia do Trading Quantitativo</span><span class="lang lang-es">Psicología del Trading Cuantitativo</span><span class="lang lang-en">Psychology of Quant Trading</span></h3>
-                            <p class="card-content"><span class="lang lang-pt">Como manter a disciplina e a confiança nos seus sistemas.</span><span class="lang lang-es">Cómo mantener la disciplina y la confianza en sus sistemas.</span><span class="lang lang-en">How to maintain discipline and trust in your systems.</span></p>
-                            <a href="#" class="button" style="cursor: not-allowed; opacity: 0.6;"><span class="lang lang-pt">Em Breve</span><span class="lang lang-es">Próximamente</span><span class="lang lang-en">Coming Soon</span></a>
-                        </div>
-                    </div>
-
-                    <h3 class="category-subtitle"><span class="lang lang-pt">Conceitos Intermediários</span><span class="lang lang-es">Conceptos Intermedios</span><span class="lang lang-en">Intermediate Concepts</span></h3>
-                    <div class="grid-layout">
-                       <div class="card blog-card">
-                            <h3><span class="lang lang-pt">Validação Walk-Forward</span><span class="lang lang-es">Validación Walk-Forward</span><span class="lang lang-en">Walk-Forward Validation</span></h3>
-                            <p class="card-content"><span class="lang lang-pt">Técnicas avançadas para simular o desempenho real de uma estratégia.</span><span class="lang lang-es">Técnicas avanzadas para simular el rendimiento real de una estrategia.</span><span class="lang lang-en">Advanced techniques to simulate a strategy's real performance.</span></p>
-                            <a href="#" class="button" style="cursor: not-allowed; opacity: 0.6;"><span class="lang lang-pt">Em Breve</span><span class="lang lang-es">Próximamente</span><span class="lang lang-en">Coming Soon</span></a>
-                        </div>
-                        <div class="card blog-card">
-                            <h3><span class="lang lang-pt">Gestão de Risco Quantitativa</span><span class="lang lang-es">Gestión del Riesgo Cuantitativa</span><span class="lang lang-en">Quantitative Risk Management</span></h3>
-                            <p class="card-content"><span class="lang lang-pt">Modelos para dimensionar posições e proteger o capital.</span><span class="lang lang-es">Modelos para dimensionar posiciones y proteger el capital.</span><span class="lang lang-en">Models for position sizing and capital protection.</span></p>
-                            <a href="#" class="button" style="cursor: not-allowed; opacity: 0.6;"><span class="lang lang-pt">Em Breve</span><span class="lang lang-es">Próximamente</span><span class="lang lang-en">Coming Soon</span></a>
-                        </div>
-                        <div class="card blog-card">
-                            <h3><span class="lang lang-pt">MQL5/Python Aplicado</span><span class="lang lang-es">MQL5/Python Aplicado</span><span class="lang lang-en">Applied MQL5/Python</span></h3>
-                            <p class="card-content"><span class="lang lang-pt">Integrando o poder da análise de dados do Python com a execução do MQL5.</span><span class="lang lang-es">Integrando el poder del análisis de datos de Python con la ejecución de MQL5.</span><span class="lang lang-en">Integrating Python's data analysis power with MQL5 execution.</span></p>
-                            <a href="#" class="button" style="cursor: not-allowed; opacity: 0.6;"><span class="lang lang-pt">Em Breve</span><span class="lang lang-es">Próximamente</span><span class="lang lang-en">Coming Soon</span></a>
-                        </div>
-                    </div>
-
-                    <h3 class="category-subtitle"><span class="lang lang-pt">Tópicos Avançados</span><span class="lang lang-es">Tópicos Avanzados</span><span class="lang lang-en">Advanced Topics</span></h3>
-                    <div class="grid-layout">
-                       <div class="card blog-card">
-                            <h3><span class="lang lang-pt">Testes de Monte Carlo</span><span class="lang lang-es">Pruebas de Monte Carlo</span><span class="lang lang-en">Monte Carlo Simulations</span></h3>
-                            <p class="card-content"><span class="lang lang-pt">Analisando a robustez de uma estratégia sob milhares de cenários de mercado.</span><span class="lang lang-es">Analizando la robustez de una estrategia bajo miles de escenarios de mercado.</span><span class="lang lang-en">Analyzing a strategy's robustness under thousands of market scenarios.</span></p>
-                            <a href="#" class="button" style="cursor: not-allowed; opacity: 0.6;"><span class="lang lang-pt">Em Breve</span><span class="lang lang-es">Próximamente</span><span class="lang lang-en">Coming Soon</span></a>
-                        </div>
-                        <div class="card blog-card">
-                            <h3><span class="lang lang-pt">Portfólios Descorrelacionados</span><span class="lang lang-es">Carteras Descorrelacionadas</span><span class="lang lang-en">Uncorrelated Portfolios</span></h3>
-                            <p class="card-content"><span class="lang lang-pt">A ciência de combinar estratégias para reduzir o risco e suavizar a curva de capital.</span><span class="lang lang-es">La ciencia de combinar estrategias para reducir el riesgo y suavizar la curva de capital.</span><span class="lang lang-en">The science of combining strategies to reduce risk and smooth the equity curve.</span></p>
-                            <a href="#" class="button" style="cursor: not-allowed; opacity: 0.6;"><span class="lang lang-pt">Em Breve</span><span class="lang lang-es">Próximamente</span><span class="lang lang-en">Coming Soon</span></a>
-                        </div>
-                        <div class="card blog-card">
-                            <h3><span class="lang lang-pt">Pipelines de Investigação</span><span class="lang lang-es">Pipelines de Investigación</span><span class="lang lang-en">Research Pipelines</span></h3>
-                            <p class="card-content"><span class="lang lang-pt">Da ideia inicial ao deployment: um framework para pesquisa e produção.</span><span class="lang lang-es">De la idea inicial al despliegue: un marco para la investigación y producción.</span><span class="lang lang-en">From initial idea to deployment: a framework for research and production.</span></p>
-                            <a href="#" class="button" style="cursor: not-allowed; opacity: 0.6;"><span class="lang lang-pt">Em Breve</span><span class="lang lang-es">Próximamente</span><span class="lang lang-en">Coming Soon</span></a>
-                        </div>
+                    <div class="card blog-card" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Psicologia do Trading Quantitativo</h3>
+                        <p class="card-content">Como manter a disciplina e a confiança nos seus sistemas, mesmo durante períodos de drawdown.</p>
+                        <a href="#" class="button" style="cursor: not-allowed; opacity: 0.6;">Em Breve</a>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- SEÇÃO DE BLOG COM ABAS - FIM -->
 
         <section id="performance" class="page-section">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up"><span class="lang lang-pt">Performance Comprovada</span><span class="lang lang-es">Rendimiento Comprobado</span><span class="lang lang-en">Proven Performance</span></h2>
-                <p data-aos="fade-up" style="text-align: center; max-width: 700px; margin: -2rem auto 3.5rem; color: var(--cor-texto-secundario);"><span class="lang lang-pt">Resultados baseados em backtests rigorosos e validados. Transparência é a chave para a confiança.</span><span class="lang lang-es">Resultados basados en backtests rigurosos y validados. La transparencia es la clave de la confianza.</span><span class="lang lang-en">Results based on rigorous and validated backtests. Transparency is the key to trust.</span></p>
+                <h2 class="section-title" data-aos="fade-up">Performance Comprovada</h2>
+                <p data-aos="fade-up" style="text-align: center; max-width: 700px; margin: -2rem auto 3.5rem; color: var(--cor-texto-secundario);">Resultados baseados em backtests rigorosos e validados. Transparência é a chave para a confiança.</p>
                 <div class="grid-layout">
                     <div class="card performance-card" data-aos="fade-up">
                         <h3>Nexus EA</h3>
                         <div class="metric"><span class="metric-value">1.85</span><span class="metric-label">Profit Factor</span></div>
                         <div class="metric"><span class="metric-value">12.4%</span><span class="metric-label">Max Drawdown</span></div>
-                        <a href="#produto-nexus" class="button"><span class="lang lang-pt">Ver Detalhes</span><span class="lang lang-es">Ver Detalles</span><span class="lang lang-en">View Details</span></a>
+                        <a href="#" class="button">Ver Detalhes</a>
                     </div>
                     <div class="card performance-card" data-aos="fade-up" data-aos-delay="100">
                         <h3>AXIS Neural EA</h3>
                         <div class="metric"><span class="metric-value">2.31</span><span class="metric-label">Profit Factor</span></div>
                         <div class="metric"><span class="metric-value">9.8%</span><span class="metric-label">Max Drawdown</span></div>
-                        <a href="#produto-axis" class="button"><span class="lang lang-pt">Ver Detalhes</span><span class="lang lang-es">Ver Detalles</span><span class="lang lang-en">View Details</span></a>
+                        <a href="#" class="button">Ver Detalhes</a>
                     </div>
                     <div class="card performance-card" data-aos="fade-up" data-aos-delay="200">
                          <h3>NODE Neural EA</h3>
                         <div class="metric"><span class="metric-value">1.92</span><span class="metric-label">Profit Factor</span></div>
                         <div class="metric"><span class="metric-value">11.2%</span><span class="metric-label">Max Drawdown</span></div>
-                        <a href="#produto-node" class="button"><span class="lang lang-pt">Ver Detalhes</span><span class="lang lang-es">Ver Detalles</span><span class="lang lang-en">View Details</span></a>
+                        <a href="#" class="button">Ver Detalhes</a>
                     </div>
                 </div>
             </div>
@@ -186,20 +71,20 @@ import Layout from '../layouts/Layout.astro';
                     <div class="card product-card" data-aos="fade-up" data-aos-delay="100">
                         <img src="https://i.postimg.cc/Ssp9H0Dv/nexus-ea-forex-mt5-logo-200x200-6618.png" alt="Logo Nexus EA">
                         <h3>Nexus EA Forex MT5</h3>
-                        <p class="card-content"><span class="lang lang-pt">Sistema diversificado e robusto, operando com 9 estratégias em até 8 pares de moedas para máxima exposição a oportunidades.</span><span class="lang lang-es">Sistema diversificado y robusto, operando con 9 estrategias en hasta 8 pares de divisas para máxima exposición a oportunidades.</span><span class="lang lang-en">A diversified and robust system, operating with 9 strategies on up to 8 currency pairs for maximum exposure to opportunities.</span></p>
-                        <a href="#produto-nexus" class="button"><span class="lang lang-pt">Saber Mais</span><span class="lang lang-es">Saber Más</span><span class="lang lang-en">Learn More</span></a>
+                        <p class="card-content">Sistema diversificado e robusto, operando com 9 estratégias em até 8 pares de moedas para máxima exposição a oportunidades.</p>
+                        <a href="#" class="button">Saber Mais</a>
                     </div>
                     <div class="card product-card" data-aos="fade-up" data-aos-delay="200">
                         <img src="https://i.postimg.cc/PJJ5R2s7/axis-neural-ea-for-mt5-logo-200x200-6888.png" alt="Logo AXIS Neural EA">
                         <h3>AXIS Neural EA</h3>
-                        <p class="card-content"><span class="lang lang-pt">A vanguarda do trading neural. Uma ferramenta de alta performance que utiliza inteligência artificial para se adaptar ao mercado.</span><span class="lang lang-es">La vanguardia del trading neural. Una herramienta de alto rendimiento que utiliza inteligencia artificial para adaptarse al mercado.</span><span class="lang lang-en">The forefront of neural trading. A high-performance tool that uses artificial intelligence to adapt to the market.</span></p>
-                        <a href="#produto-axis" class="button"><span class="lang lang-pt">Saber Mais</span><span class="lang lang-es">Saber Más</span><span class="lang lang-en">Learn More</span></a>
+                        <p class="card-content">A vanguarda do trading neural. Uma ferramenta de alta performance que utiliza inteligência artificial para se adaptar ao mercado.</p>
+                        <a href="#" class="button">Saber Mais</a>
                     </div>
                     <div class="card product-card" data-aos="fade-up" data-aos-delay="300">
                         <img src="https://i.postimg.cc/NjBjhscT/node-neural-ea-for-mt5-logo-200x200-1327.png" alt="Logo NODE Neural EA">
                         <h3>NODE Neural EA</h3>
-                        <p class="card-content"><span class="lang lang-pt">Uma porta de entrada para o trading com IA, focado em simplicidade de uso sem sacrificar a eficácia da estratégia.</span><span class="lang lang-es">Una puerta de entrada al trading con IA, centrado en la simplicidad de uso sin sacrificar la eficacia de la estrategia.</span><span class="lang lang-en">A gateway to AI trading, focused on ease of use without sacrificing strategy effectiveness.</span></p>
-                        <a href="#produto-node" class="button"><span class="lang lang-pt">Saber Mais</span><span class="lang lang-es">Saber Más</span><span class="lang lang-en">Learn More</span></a>
+                        <p class="card-content">Uma porta de entrada para o trading com IA, focado em simplicidade de uso sem sacrificar a eficácia da estratégia.</p>
+                        <a href="#" class="button">Saber Mais</a>
                     </div>
                 </div>
             </div>
@@ -212,7 +97,7 @@ import Layout from '../layouts/Layout.astro';
                         <img src="https://i.postimg.cc/mgspR5D0/C-pia-de-Beige-Minimalist-Initial-Brand-Logo-Instagram-Post-1.png" alt="Foto de Enrique Enguix" style="width: 200px; height: 200px; border-radius: 50%;">
                         <div style="flex: 1;">
                             <h2 class="section-title" style="text-align: left; margin: 0 0 1rem 0;">Enrique Enguix</h2>
-                            <p style="font-size: 1.1em;"><span class="lang lang-pt">Olá! Sou um Analista Quantitativo e Desenvolvedor MQL5. Minha paixão é criar uma ponte entre a teoria acadêmica e a prática do trading, oferecendo soluções robustas e conteúdo de qualidade para traders em todo o mundo.</span><span class="lang lang-es">¡Hola! Soy Analista Cuantitativo y Desarrollador MQL5. Mi pasión es crear un puente entre la teoría académica y la práctica del trading, ofreciendo soluciones robustas y contenido de qualidade para traders de todo el mundo.</span><span class="lang lang-en">Hello! I am a Quantitative Analyst and MQL5 Developer. My passion is to bridge the gap between academic theory and trading practice, offering robust solutions and quality content for traders worldwide.</span></p>
+                            <p style="font-size: 1.1em;">Olá! Sou um Analista Quantitativo e Desenvolvedor MQL5. Minha paixão é criar uma ponte entre a teoria acadêmica e a prática do trading, oferecendo soluções robustas e conteúdo de qualidade para traders em todo o mundo.</p>
                         </div>
                     </div>
                 </div>
@@ -221,50 +106,26 @@ import Layout from '../layouts/Layout.astro';
 
         <section id="contato" class="page-section">
             <div class="container" style="max-width: 800px;">
-                <h2 class="section-title" data-aos="fade-up"><span class="lang lang-pt">Entre em Contato</span><span class="lang lang-es">Ponte en Contacto</span><span class="lang lang-en">Get in Touch</span></h2>
+                <h2 class="section-title" data-aos="fade-up">Entre em Contato</h2>
                 <div data-aos="fade-up" style="text-align:center; margin-bottom: 2.5rem;">
-                    <p><span class="lang lang-pt">Como posso ajudar? Escolha a opção mais adequada abaixo.</span><span class="lang lang-es">¿Cómo puedo ayudar? Elija la opción más adecuada a continuación.</span><span class="lang lang-en">How can I help? Please choose the most suitable option below.</span></p>
+                    <p>Como posso ajudar? Escolha a opção mais adequada abaixo.</p>
                 </div>
                 <div class="contact-options" data-aos="fade-up">
-                    <button class="tab-button active" data-contact="form"><i class="fas fa-question-circle"></i> <span class="lang lang-pt">Dúvidas & Suporte</span><span class="lang lang-es">Dudas & Soporte</span><span class="lang lang-en">Questions & Support</span></button>
-                    <button class="tab-button" data-contact="direct"><i class="fas fa-handshake"></i> <span class="lang lang-pt">Projetos & Parcerias</span><span class="lang lang-es">Proyectos & Colaboraciones</span><span class="lang lang-en">Projects & Partnerships</span></button>
+                    <button class="tab-button active" data-contact="form"><i class="fas fa-question-circle"></i> Dúvidas & Suporte</button>
+                    <button class="tab-button" data-contact="direct"><i class="fas fa-handshake"></i> Projetos & Parcerias</button>
                 </div>
                 <div id="contact-form" class="contact-details active">
                     <div class="card">
                         <form id="contact-form-element" name="contato" data-netlify="true">
-                            <div class="form-group"><label for="name"><span class="lang lang-pt">Nome</span><span class="lang lang-es">Nombre</span><span class="lang lang-en">Name</span></label><input type="text" id="name" name="name" required></div>
+                            <div class="form-group"><label for="name">Nome</label><input type="text" id="name" name="name" required></div>
                             <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
-                            <div class="form-group"><label for="message"><span class="lang lang-pt">Mensagem</span><span class="lang lang-es">Mensaje</span><span class="lang lang-en">Message</span></label><textarea id="message" name="message" required rows="5"></textarea></div>
-                            <button type="submit" class="button" style="justify-self: start;"><span class="lang lang-pt">Enviar Mensagem</span><span class="lang lang-es">Enviar Mensaje</span><span class="lang lang-en">Send Message</span></button>
+                            <div class="form-group"><label for="message">Mensagem</label><textarea id="message" name="message" required rows="5"></textarea></div>
+                            <button type="submit" class="button" style="justify-self: start;">Enviar Mensagem</button>
                         </form>
                         <div id="form-feedback-message" class="form-feedback"></div>
                     </div>
                 </div>
-                <div id="contact-direct" class="contact-details">
-                    <div class="card" style="text-align: center;">
-                        <p><span class="lang lang-pt">Para discutir projetos, colaborações ou propostas de negócios, utilize os canais diretos abaixo.</span><span class="lang lang-es">Para discutir proyectos, colaboraciones o propuestas de negocio, utilice los canales directos a continuación.</span><span class="lang lang-en">To discuss projects, collaborations, or business proposals, please use the direct channels below.</span></p>
-                        <div class="contact-direct-channels">
-                            <a href="mailto:enguix67@gmail.com"><i class="fas fa-envelope"></i><span>Email</span></a>
-                            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
-                            <a href="https://t.me/yourtelegram" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram-plane"></i><span>Telegram</span></a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
-    </div>
-
-    <!-- Páginas/Views Adicionais -->
-    <div class="page-views">
-        <!-- PÁGINAS DE PRODUTO -->
-        <section id="produto-nexus" class="page-view"><div class="container"><div class="product-page-content"><div class="product-header"><img src="https://i.postimg.cc/Ssp9H0Dv/nexus-ea-forex-mt5-logo-200x200-6618.png" alt="Logo Nexus EA"><h1>Nexus EA</h1><p class="post-meta">Estratégia de Diversificação Multi-par</p></div><h2>Sobre o Nexus EA</h2><p>O Nexus EA é um sistema de trading algorítmico projetado para máxima robustez através da diversificação. Ele opera simultaneamente 9 estratégias independentes em até 8 pares de moedas, garantindo que o sistema não dependa de uma única condição de mercado para performar.</p><h2>Resultados do Backtest</h2><p>O gráfico abaixo demonstra a performance do Nexus EA em um backtest de 5 anos (2020-2025) utilizando dados de tick de alta qualidade.</p><div class="backtest-image-container"><img src="https://i.postimg.cc/Y0G4g2Q3/backtest-placeholder-1.png" alt="Gráfico de backtest do Nexus EA"></div><h2>FAQ</h2><div class="faq-item"><p class="faq-question">Quais pares são recomendados?</p><p>O EA é otimizado para EURUSD, GBPUSD, AUDUSD, NZDUSD, USDCAD, USDCHF, USDJPY, e EURJPY.</p></div><div class="faq-item"><p class="faq-question">Qual o depósito mínimo recomendado?</p><p>Recomendamos um mínimo de $500 para uma gestão de risco segura.</p></div><div class="product-page-buttons"><a href="#produtos" class="button"><span class="lang lang-pt">&larr; Voltar aos Produtos</span><span class="lang lang-es">&larr; Volver a Productos</span><span class="lang lang-en">&larr; Back to Products</span></a><a href="https://www.mql5.com/pt/market/product/90877" class="button button-mql5" target="_blank" rel="noopener noreferrer"><i class="fas fa-shopping-cart"></i> <span class="lang lang-pt">Ver na Loja MQL5</span><span class="lang lang-es">Ver en la Tienda MQL5</span><span class="lang lang-en">View on MQL5 Store</span></a></div></div></div></section>
-        <section id="produto-axis" class="page-view"><div class="container"><div class="product-page-content"><div class="product-header"><img src="https://i.postimg.cc/PJJ5R2s7/axis-neural-ea-for-mt5-logo-200x200-6888.png" alt="Logo AXIS Neural EA"><h1>AXIS Neural EA</h1><p class="post-meta">Inteligência Artificial Adaptativa</p></div><h2>Sobre o AXIS Neural EA</h2><p>O AXIS Neural EA representa a vanguarda do trading com IA. Utilizando uma rede neural recorrente (RNN), ele analisa padrões complexos no fluxo de dados do mercado para tomar decisões preditivas. Sua principal vantagem é a capacidade de se adaptar a regimes de mercado em constante mudança.</p><h2>Resultados do Backtest</h2><p>O gráfico abaixo demonstra a performance do AXIS Neural EA em um backtest de 5 anos (2020-2025) no par EURUSD.</p><div class="backtest-image-container"><img src="https://i.postimg.cc/3wPJF4K9/backtest-placeholder-2.png" alt="Gráfico de backtest do AXIS EA"></div><h2>FAQ</h2><div class="faq-item"><p class="faq-question">Este EA precisa de otimização frequente?</p><p>Não. A rede neural foi treinada para ser adaptativa, eliminando a necessidade de reotimizações constantes.</p></div><div class="faq-item"><p class="faq-question">Qual o timeframe recomendado?</p><p>O EA opera internamente em múltiplos timeframes, mas deve ser anexado ao gráfico H1.</p></div><div class="product-page-buttons"><a href="#produtos" class="button"><span class="lang lang-pt">&larr; Voltar aos Produtos</span><span class="lang lang-es">&larr; Volver a Productos</span><span class="lang lang-en">&larr; Back to Products</span></a><a href="https://www.mql5.com/pt/market/product/126781" class="button button-mql5" target="_blank" rel="noopener noreferrer"><i class="fas fa-shopping-cart"></i> <span class="lang lang-pt">Ver na Loja MQL5</span><span class="lang lang-es">Ver en la Tienda MQL5</span><span class="lang lang-en">View on MQL5 Store</span></a></div></div></div></section>
-        <section id="produto-node" class="page-view"><div class="container"><div class="product-page-content"><div class="product-header"><img src="https://i.postimg.cc/NjBjhscT/node-neural-ea-for-mt5-logo-200x200-1327.png" alt="Logo NODE Neural EA"><h1>NODE Neural EA</h1><p class="post-meta">Simplicidade e Eficácia com IA</p></div><h2>Sobre o NODE Neural EA</h2><p>O NODE Neural EA foi criado para ser a porta de entrada ideal para o trading com inteligência artificial. Ele combina uma estratégia neural eficaz com uma configuração extremamente simples (plug-and-play), ideal para traders que buscam uma solução robusta sem a complexidade de múltiplos parâmetros.</p><h2>Resultados do Backtest</h2><p>O gráfico abaixo demonstra a performance do NODE Neural EA em um backtest de 5 anos (2020-2025) no par GBPUSD.</p><div class="backtest-image-container"><img src="https://i.postimg.cc/Y0G4g2Q3/backtest-placeholder-1.png" alt="Gráfico de backtest do NODE EA"></div><h2>FAQ</h2><div class="faq-item"><p class="faq-question">Quantos parâmetros preciso configurar?</p><p>Apenas o tamanho do lote (Lot Size) e o Risco Máximo. O resto é totalmente automático.</p></div><div class="faq-item"><p class="faq-question">Funciona em qualquer corretora?</p><p>Sim, o EA foi projetado para funcionar com qualquer corretora que ofereça spreads baixos.</p></div><div class="product-page-buttons"><a href="#produtos" class="button"><span class="lang lang-pt">&larr; Voltar aos Produtos</span><span class="lang lang-es">&larr; Volver a Productos</span><span class="lang lang-en">&larr; Back to Products</span></a><a href="https://www.mql5.com/pt/market/product/126605" class="button button-mql5" target="_blank" rel="noopener noreferrer"><i class="fas fa-shopping-cart"></i> <span class="lang lang-pt">Ver na Loja MQL5</span><span class="lang lang-es">Ver en la Tienda MQL5</span><span class="lang lang-en">View on MQL5 Store</span></a></div></div></div></section>
-
-        <!-- PÁGINAS DE ARTIGOS -->
-        <section id="artigo-ia" class="page-view"><div class="container"><div class="article-content"><h1 class="section-title" style="text-align: left; font-size: 2.8rem;"><span class="lang lang-pt">Aplicações de IA no Mercado Financeiro</span><span class="lang lang-es">Aplicaciones de IA en el Mercado Financiero</span><span class="lang lang-en">AI Applications in the Financial Market</span></h1><p class="post-meta"><span class="lang lang-pt">Publicado por Enrique Enguix - 18 de Agosto, 2025</span><span class="lang lang-es">Publicado por Enrique Enguix - 18 de Agosto, 2025</span><span class="lang lang-en">Posted by Enrique Enguix - August 18, 2025</span></p><p><span class="lang lang-pt">A inteligência artificial (IA) e o machine learning estão a redefinir os limites do trading algorítmico...</span><span class="lang lang-es">La inteligencia artificial (IA) y el machine learning están redefiniendo los límites del trading algorítmico...</span><span class="lang lang-en">Artificial intelligence (AI) and machine learning are redefining the boundaries of algorithmic trading...</span></p><img src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=2070&auto=format&fit=crop" alt="Visualização abstrata de redes neurais e dados financeiros."><h2><span class="lang lang-pt">Como a IA Transforma a Análise</span><span class="lang lang-es">Cómo la IA Transforma el Análisis</span><span class="lang lang-en">How AI Transforms Analysis</span></h2><p><span class="lang lang-pt">Os modelos de redes neurais conseguem identificar padrões não-lineares complexos...</span><span class="lang lang-es">...</span><span class="lang lang-en">...</span></p><div class="social-share"><p><span class="lang lang-pt">Gostou deste artigo? Compartilhe!</span><span class="lang lang-es">¿Te gustó este artículo? ¡Compártelo!</span><span class="lang lang-en">Did you like this article? Share it!</span></p><div class="social-share-buttons"><a href="#" target="_blank" aria-label="Share on Twitter" class="share-twitter"><i class="fab fa-twitter"></i></a><a href="#" target="_blank" aria-label="Share on LinkedIn" class="share-linkedin"><i class="fab fa-linkedin-in"></i></a><a href="#" target="_blank" aria-label="Share on Facebook" class="share-facebook"><i class="fab fa-facebook-f"></i></a><a href="#" target="_blank" aria-label="Share on Telegram" class="share-telegram"><i class="fab fa-telegram-plane"></i></a></div></div><a href="#blog" class="button"><span class="lang lang-pt">&larr; Voltar ao Blog</span><span class="lang lang-es">&larr; Volver al Blog</span><span class="lang lang-en">&larr; Back to Blog</span></a></div></div></section>
-        <section id="artigo-backtesting" class="page-view"><div class="container"><div class="article-content"><h1 class="section-title" style="text-align: left; font-size: 2.8rem;"><span class="lang lang-pt">A Arte do Backtesting Robusto</span><span class="lang lang-es">El Arte del Backtesting Robusto</span><span class="lang lang-en">The Art of Robust Backtesting</span></h1><p class="post-meta"><span class="lang lang-pt">Publicado por Enrique Enguix - 10 de Julho, 2025</span><span class="lang lang-es">Publicado por Enrique Enguix - 10 de Julio, 2025</span><span class="lang lang-en">Posted by Enrique Enguix - July 10, 2025</span></p><p><span class="lang lang-pt">Um backtest bem-sucedido não garante lucros futuros...</span><span class="lang lang-es">...</span><span class="lang lang-en">...</span></p><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Gráficos e dashboards de análise de dados."><h2><span class="lang lang-pt">Evitando o Sobreajuste</span><span class="lang lang-es">Evitando el Sobreajuste</span><span class="lang lang-en">Avoiding Overfitting</span></h2><p><span class="lang lang-pt">O sobreajuste ocorre quando um Expert Advisor é otimizado de forma tão perfeita para dados históricos...</span><span class="lang lang-es">...</span><span class="lang lang-en">...</span></p><div class="social-share"><p><span class="lang lang-pt">Gostou deste artigo? Compartilhe!</span><span class="lang lang-es">¿Te gustó este artículo? ¡Compártelo!</span><span class="lang lang-en">Did you like this article? Share it!</span></p><div class="social-share-buttons"><a href="#" target="_blank" aria-label="Share on Twitter" class="share-twitter"><i class="fab fa-twitter"></i></a><a href="#" target="_blank" aria-label="Share on LinkedIn" class="share-linkedin"><i class="fab fa-linkedin-in"></i></a><a href="#" target="_blank" aria-label="Share on Facebook" class="share-facebook"><i class="fab fa-facebook-f"></i></a><a href="#" target="_blank" aria-label="Share on Telegram" class="share-telegram"><i class="fab fa-telegram-plane"></i></a></div></div><a href="#blog" class="button"><span class="lang lang-pt">&larr; Voltar ao Blog</span><span class="lang lang-es">&larr; Volver al Blog</span><span class="lang lang-en">&larr; Back to Blog</span></a></div></div></section>
-
-        <section id="obrigado" class="page-view"><div class="hero" style="min-height: 80vh;"><div class="container"><div class="hero-content"><h1><span class="lang lang-pt">Mensagem Enviada!</span><span class="lang lang-es">¡Mensaje Enviado!</span><span class="lang lang-en">Message Sent!</span></h1><p><span class="lang lang-pt">Obrigado pelo seu contato. Responderei o mais breve possível.</span><span class="lang lang-es">Gracias por tu contacto. Responderé lo antes posible.</span><span class="lang lang-en">Thank you for your message. I will get back to you as soon as possible.</span></p><a href="#inicio" class="button"><span class="lang lang-pt">Voltar à Página Inicial</span><span class="lang lang-es">Volver a la Página Principal</span><span class="lang lang-en">Back to Home</span></a></div></div></div></section>
     </div>
 </Layout>
