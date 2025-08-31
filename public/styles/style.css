@@ -194,13 +194,6 @@ body {
 }
 .contact-direct-channels i { font-size: 2rem; }
 .contact-direct-channels span { font-family: var(--fonte-corpo); }
-.language-switcher { position: relative; }
-#language-toggle-button, #mobile-language-toggle-button { background: none; border: 1px solid var(--cor-borda); color: var(--cor-texto-secundario); border-radius: 50%; cursor: pointer; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-size: 1rem; transition: all 0.3s; }
-#language-toggle-button:hover, #mobile-language-toggle-button:hover { border-color: var(--cor-primaria); color: var(--cor-primaria); }
-#language-menu, #mobile-language-menu { position: absolute; top: 120%; right: 0; background-color: var(--cor-card); border: 1px solid var(--cor-borda); border-radius: 8px; list-style: none; margin: 0; padding: 0.4rem; width: 170px; z-index: 1001; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s; }
-#language-menu.show, #mobile-language-menu.show { opacity: 1; visibility: visible; transform: translateY(0); }
-#language-menu li button, #mobile-language-menu li button { background: none; border: none; color: var(--cor-texto-principal); cursor: pointer; width: 100%; text-align: left; padding: 0.6rem 1rem; border-radius: 5px; font-size: 1em; display: flex; align-items: center; gap: 10px; transition: background-color 0.2s; }
-#language-menu li button:hover, #mobile-language-menu li button:hover { background-color: var(--cor-fundo); }
 footer { text-align: center; padding: 3rem; color: var(--cor-texto-secundario); font-size: 0.9rem; background-color: #051021; }
 .social-links a { color: var(--cor-texto-secundario); font-size: 1.5rem; margin: 0 1rem; transition: color 0.3s; }
 .social-links a:hover { color: var(--cor-primaria); }
@@ -213,17 +206,9 @@ footer { text-align: center; padding: 3rem; color: var(--cor-texto-secundario); 
 #back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
 #back-to-top:hover { opacity: 0.8; }
 
-/* ESTA É A CORREÇÃO CRÍTICA */
-.lang { display: none; }
-body.lang-active-pt .lang-pt,
-body.lang-active-es .lang-es,
-body.lang-active-en .lang-en {
-  display: inline; /* Usar 'inline' ou 'revert' em vez de 'block' */
-}
-/* FIM DA CORREÇÃO */
-
 #mobile-menu-toggle { display: none; }
 .mobile-nav-container { display: none; }
+
 @media (max-width: 800px) {
     .desktop-nav { display: none; }
     #mobile-menu-toggle { display: block; background: none; border: none; color: var(--cor-texto-principal); font-size: 1.5rem; cursor: pointer; z-index: 1002; }
@@ -241,4 +226,114 @@ body.lang-active-en .lang-en {
     .section-title { font-size: 2rem; }
     .page-section { padding: 3rem 0; }
     #sobre .card > div { flex-direction: column; text-align: center; }
-}
+}```
+4.  Clique em **"Commit changes..."**.
+
+#### **Passo 2: Substitua o `Layout.astro`**
+
+1.  Vá para `src` -> `layouts` e clique para **editar** o arquivo **`Layout.astro`**.
+2.  **APAGUE COMPLETAMENTE** tudo o que está dentro dele.
+3.  **COPIE e COLE o código abaixo** em seu lugar. (Este é o seu layout simplificado para português, com o script correto para interatividade).
+
+```astro
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrique Enguix - Soluções de Trading Quantitativo</title>
+    <meta name="description" content="Enrique Enguix - Desenvolvimento de Expert Advisors (Robôs de Trading) para MQL5 com base em análise quantitativa e inteligência artificial.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <header class="main-nav">
+        <a href="#inicio" class="logo">Enrique Enguix</a>
+        <div class="desktop-nav">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+        <button id="mobile-menu-toggle" aria-label="Open menu">
+            <i class="fas fa-bars icon-bars"></i>
+            <i class="fas fa-times icon-close"></i>
+        </button>
+    </header>
+    
+    <main>
+        <slot />
+    </main>
+
+    <a href="#inicio" id="back-to-top" aria-label="Voltar ao topo"><i class="fas fa-chevron-up"></i></a>
+
+    <footer>
+        <div class="social-links" style="margin-bottom: 1.5rem;">
+            <a href="https://www.mql5.com/pt/users/envex/seller" target="_blank" rel="noopener noreferrer" aria-label="Perfil MQL5"><i class="fas fa-chart-line"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Perfil LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:enguix67@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar E-mail"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2025 Enrique Enguix. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 800, once: true, delay: 100, anchorPlacement: 'top-bottom' });
+
+            const backToTopButton = document.getElementById('back-to-top');
+            if (backToTopButton) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTopButton.classList.add('show');
+                    } else {
+                        backToTopButton.classList.remove('show');
+                    }
+                });
+            }
+
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            if (mobileMenuToggle) {
+                 mobileMenuToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    document.body.classList.toggle('mobile-menu-open');
+                });
+            }
+
+            const setupTabs = (containerSelector, buttonSelector, contentClassPrefix) => {
+                const container = document.querySelector(containerSelector);
+                if (!container) return;
+
+                const tabButtons = container.querySelectorAll(buttonSelector);
+                const allContents = document.querySelectorAll(`[id^=${contentClassPrefix}-]`);
+                
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        allContents.forEach(content => content.classList.remove('active'));
+                        
+                        button.classList.add('active');
+                        const dataAttr = button.dataset.tab || button.dataset.contact;
+                        const contentId = `${contentClassPrefix}-${dataAttr}`;
+                        const activeContent = document.getElementById(contentId);
+                        if (activeContent) {
+                            activeContent.classList.add('active');
+                        }
+                    });
+                });
+            };
+            
+            setupTabs('.blog-tabs', '.tab-button', 'tab');
+            setupTabs('.contact-options', '.tab-button', 'contact');
+        });
+    </script>
+</body>
+</html>
